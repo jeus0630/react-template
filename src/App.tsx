@@ -1,34 +1,26 @@
-import { useEffect, useState } from 'react';
+import { RouteObject, useRoutes } from 'react-router-dom';
 import './App.css';
-import { useGetUser } from './hooks/useGetUsers';
-import userState from './store/user';
-import { useSetRecoilState } from 'recoil';
+import Layout from './components/common/Layout';
+import User from './pages/User';
+import Home from './pages/Home';
+import NotFound from './pages/NotFound';
+
+const routes: RouteObject[] = [
+  {
+    path: '/',
+    element: <Layout />,
+    children: [
+      { index: true, element: <Home></Home> },
+      { path: '/user', element: <User></User> },
+      { path: '*', element: <NotFound></NotFound> },
+    ],
+  },
+];
 
 function App() {
-  const { isLoading, isError, error, data } = useGetUser(1);
-  const [warning, setWarning] = useState<string>('');
-  const setUser = useSetRecoilState(userState);
+  const element = useRoutes(routes);
 
-  useEffect(() => {
-    if (isError) {
-      error?.message === '404' && setWarning('404: Cannot request');
-    }
-  }, [isError]);
-
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
-  if (data != null) {
-    setUser(data);
-  }
-
-  return (
-    <div className="App">
-      <p>{warning !== '' && warning}</p>
-      <p>{data?.name}</p>
-    </div>
-  );
+  return element;
 }
 
 export default App;
