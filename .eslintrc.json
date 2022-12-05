@@ -37,6 +37,7 @@
         "vite-env.d.ts",
         "jest.config.cjs",
         "jest.setup.ts",
-        "vite.config.ts"
+        "vite.config.ts",
+        "__mocks__/**"
     ]
 }
