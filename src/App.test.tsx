@@ -3,9 +3,9 @@ import { screen, render } from './utils/TestUtils';
 import App from './App';
 
 describe('App', () => {
-  it('Should work with API Call', async () => {
+  it('Should work with API Call', () => {
     render(<App></App>);
-    const name = await screen.findByText('Leanne Graham');
-    expect(name).toBeInTheDocument();
+    const homeText = screen.getByText(/Vite React Template !/);
+    expect(homeText).toBeInTheDocument();
   });
 });
