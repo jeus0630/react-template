@@ -9,17 +9,17 @@ export default function User() {
   const setUser = useSetRecoilState(userState);
 
   useEffect(() => {
+    if (data != null) {
+      setUser(data);
+    }
+
     if (isError) {
       error?.message === '404' && setWarning('404: Cannot request');
     }
-  }, [isError]);
+  }, [isError, data]);
 
   if (isLoading) {
     return <div>Loading...</div>;
-  }
-
-  if (data != null) {
-    setUser(data);
   }
 
   return (
