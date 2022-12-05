@@ -20,7 +20,8 @@
     "axios": "^1.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-query": "^3.39.2"
+    "react-query": "^3.39.2",
+    "recoil": "^0.7.6"
   },
   "devDependencies": {
     "@babel/core": "^7.20.5",

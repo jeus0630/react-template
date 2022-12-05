@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import { useGetUser } from './hooks/useGetUsers';
+import userState from './store/user';
+import { useSetRecoilState } from 'recoil';
 
 function App() {
   const { isLoading, isError, error, data } = useGetUser(1);
   const [warning, setWarning] = useState<string>('');
+  const setUser = useSetRecoilState(userState);
 
   useEffect(() => {
     if (isError) {
@@ -14,6 +17,10 @@ function App() {
 
   if (isLoading) {
     return <div>Loading...</div>;
+  }
+
+  if (data != null) {
+    setUser(data);
   }
 
   return (
