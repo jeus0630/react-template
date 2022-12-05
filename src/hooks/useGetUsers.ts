@@ -2,11 +2,10 @@ import { useQuery, UseQueryResult } from 'react-query';
 import { useAxios } from '../utils/axios';
 
 interface userGetResType {
-  userId: number;
-  statusCode: string;
+  id: number;
+  name: string;
+  username: string;
   email: string;
-  fullName: string;
-  location: string;
 }
 
 const getUser = async (id: number): Promise<userGetResType> => {
