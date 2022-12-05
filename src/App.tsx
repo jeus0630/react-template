@@ -19,7 +19,7 @@ function App() {
   return (
     <div className="App">
       <p>{warning !== '' && warning}</p>
-      <p>{data != null && JSON.stringify(data)}</p>
+      <p>{data?.name}</p>
     </div>
   );
 }
