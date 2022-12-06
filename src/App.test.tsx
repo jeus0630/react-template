@@ -1,6 +1,6 @@
-import { screen, render } from './utils/TestUtils';
+import { screen, render } from '@/utils/TestUtils';
 
-import App from './App';
+import App from '@/App';
 
 describe('App', () => {
   it('Should work with API Call', () => {
