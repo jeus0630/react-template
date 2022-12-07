@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { useGetUser } from '../hooks/useGetUsers';
-import userState from '../store/user';
+import { useGetUser } from '@/hooks/useGetUsers';
+import userState from '@/store/user';
 import { useSetRecoilState } from 'recoil';
 
 export default function User() {
