@@ -8,7 +8,7 @@ A working-level react template based on vite bundling tool.
     ```
 2. Install Husky 
     ```zsh
-    yarn husky install
+    yarn prepare
     ```
 3. Enjoy your coding!
 
