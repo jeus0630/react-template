@@ -1,8 +1,11 @@
 module.exports = {
     testEnvironment: 'jsdom',
     collectCoverageFrom: [
-      'src/components/**/*.{ts,tsx}',
-      '!src/components/**/*.{types,type,stories,constants,test,spec}.{ts,tsx}',
+      'src/**/*.{ts,tsx}',
+      '!src/App.tsx',
+      '!src/env.ts',
+      '!src/{stories,store,mocks,utils,hooks}/**',
+      '!src/**/*.{types,type,stories,constants,test,spec}.{ts,tsx}',
       '!**/*.d.ts',
       '!**/*.config.*',
       '!**/node_modules/**',
