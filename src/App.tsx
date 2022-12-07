@@ -1,5 +1,4 @@
 import { RouteObject, useRoutes } from 'react-router-dom';
-import '@/App.css';
 import Layout from '@/components/common/Layout';
 import User from '@/pages/User';
 import Home from '@/pages/Home';
